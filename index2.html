@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>SampleProgram</title>
     <style>
-    	* { padding: 0; margin: 0; }
+    	* { padding: 0; margin: 10px; }
     	canvas { background: #eee; display: block; margin: 0 auto; }
     </style>
 </head>
@@ -37,13 +37,13 @@
         if(rightPressed && paddleX < canvas.width-paddleWidth) {
             paddleX += 7;
         }
-        else if(leftPressed && paddleX > 0) {
+        if(leftPressed && paddleX > 0) {
             paddleX -= 7;
         }
-        else if(UpPressed && paddleY > 0) {
+        if(UpPressed && paddleY > 0) {
             paddleY -= 7;
         }
-        else if(DownPressed && paddleY < canvas.height-paddleHeight) {
+        if(DownPressed && paddleY < canvas.height-paddleHeight) {
             paddleY += 7;
         }
         drawPaddle();
@@ -65,11 +65,13 @@
         if(e.keyCode == 39) {
             rightPressed = true;
         }
-        else if(e.keyCode == 37) {
+        if(e.keyCode == 37) {
             leftPressed = true;
-        }else if(e.keyCode == 38){
+        }
+        if(e.keyCode == 38){
             UpPressed = true;
-        }else if(e.keyCode == 40){
+        }
+        if(e.keyCode == 40){
             DownPressed = true;
         }
     }
@@ -78,11 +80,13 @@
         if(e.keyCode == 39) {
             rightPressed = false;
         }
-        else if(e.keyCode == 37) {
+        if(e.keyCode == 37) {
             leftPressed = false;
-        }else if(e.keyCode == 38){
+        }
+        if(e.keyCode == 38){
             UpPressed = false;
-        }else if(e.keyCode == 40){
+        }
+        if(e.keyCode == 40){
             DownPressed = false;
         }
     }
